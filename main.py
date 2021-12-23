@@ -1,4 +1,4 @@
-# Basiert auf Version im Word im Teams
+# Basiert auf Version im Word aus Teams
 # Importing all the necessary modules
 from tkinter import *
 
