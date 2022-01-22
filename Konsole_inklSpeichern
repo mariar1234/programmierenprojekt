@@ -1,0 +1,45 @@
+from datetime import datetime
+import time
+import csv
+
+def einlesen():
+    reader = csv.reader(open("liste.csv", "r"), delimiter=",")
+    tasks = []
+    for row in reader:
+        tasks.append(row)
+    return tasks
+
+def ausgeben(tasks):
+    for row in tasks:
+        print(row)
+    return
+
+def erstellen(taskliste):
+    titel = input("Geben Sie einen Titel für Ihr ToDo ein:")
+    erstellt = datetime.today().strftime("%d.%m.%Y")
+    verantwortlich = input("Wer ist für diesen Task verantwortlich?")
+    duedate = input("Bis wann muss es erledigt sein?")
+    task = [titel,erstellt,verantwortlich,duedate]
+    taskliste.append(task)
+    return taskliste
+
+def schreiben(taskliste):
+    writer = csv.writer(open("liste.csv", "w"))
+    writer.writerows(taskliste)
+    return
+
+while True:
+    tasks = einlesen()
+    ausgeben(tasks)
+    aktion = (input("Was wollen Sie machen? Drücken Sie 1 für 'Aufgabe erledigen', 2 für 'Aufgabe hinzufügen', 3 für 'beenden'."))
+    if aktion == "1":
+        pass
+    elif aktion == "2":
+        neueTaskliste = erstellen(tasks)
+        schreiben(neueTaskliste)
+    elif aktion == "3":
+        break
+    else:
+        print("Befehl nicht unterstützt.")
+        time.sleep(3)
+
