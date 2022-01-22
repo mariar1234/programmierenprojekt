@@ -42,4 +42,4 @@ while True:
     else:
         print("Befehl nicht unterstützt.")
         time.sleep(3)
-
+ 
