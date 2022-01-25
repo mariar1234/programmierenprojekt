@@ -61,15 +61,6 @@ def markcompleted():
     listbox_task.insert(temp, temp_marked)
     return
 
-# def speichern():
-#     tasks = []
-#     anzahl = listbox_task.size()
-#     for task in range(anzahl):
-#         todo = str(listbox_task.get(task))
-#         tasks.append(todo)
-#     writer = csv.writer(open("liste.csv", "w"))
-#     writer.writerows(tasks)
-#     return
 
 def speichern():
     taskliste = listbox_task.get(0, listbox_task.size())
