@@ -55,9 +55,9 @@ def markcompleted():
     marked = listbox_task.curselection()
     temp = marked[0]
     temp_marked = listbox_task.get(marked)
-    #if "  - Done" in temp_marked:
-        #temp_marked = temp_marked.replace("  - Done", "")
-    #else:
+    if "  - Done" in temp_marked:
+        temp_marked = temp_marked.replace("  - Done", "")
+    else:
     temp_marked += "  - Done"
 
     listbox_task.delete(temp)
